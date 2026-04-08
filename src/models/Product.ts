@@ -31,7 +31,10 @@ class Product {
     // getting the price with the discount calculator from our imported module being returned as a number
     getPriceWithDiscount(): number {
         const discountAmount = calculateDiscount(this.price, this.discountPercentage);
-        return this.price - discountAmount; //returns the price after the discount ammount applied
+        const newPrice = this.price - discountAmount;
+        return Number(newPrice.toFixed(2)); // returns the new price after discount, rounded to 2 decimal places
     }
 
 }
+
+
